@@ -12,8 +12,9 @@ data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 
 st.title("Reconocimiento de Imágenes")
 
-image = Image.open('OIG5.jpg')
-st.image(image, width=350)
+# Imagen principal (encabezado)
+imagen_inicio = Image.open('inicio.jpg')
+st.image(imagen_inicio, width=350)
 
 with st.sidebar:
     st.subheader("Usando un modelo entrenado en Teachable Machine puedes usarlo en esta app para identificar")
@@ -38,5 +39,7 @@ if img_file_buffer is not None:
 
     if prob_majo > 0.5:
         st.header("Hola Majo")
+        st.image('hello.png', width=300)
     else:
         st.header("No te veo majo")
+        st.image('bye.png', width=300)
